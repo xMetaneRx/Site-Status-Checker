@@ -1,77 +1,64 @@
 doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name='description', content='A simple site status checker')
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title=title
-        style(type="text/css").
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'sans-serif';
-            }
-
-            body {
-                height: 100vh;
-            }
-
-            .container {
-                height: 100%;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                background-color: #D6E4FF;
-                color: #0B3177;
-            }
-
-
-            .status {
-                font-size: 1.2rem;
-                margin-bottom: 1rem;
-                color: #2B7B97;
-            }
-
-            .error {
-                color: #7A0A20;
-            }
-
-            .success {
-                color: #0B5F24;
-            }
-
-            input {
-                margin-top: .5rem;
-                padding: .5rem 2rem;
-                border: none;
-                background-color: #2D86D6;
-                color: white;
-            }
-
-            input[type='submit'] {
-                background-color: #134690;
-                color: white;
-            }
-
-            input[type='submit']:hover {
-                cursor: pointer;
-            }
-
-            input:focus {
-                outline: 2px solid #134690;
-            }
-
-            svg {
-                position: absolute;
-                bottom: 0;
-            }
-    body
-        div(class="container")
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='A simple site status checker')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title
+    style(type='text/css').
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'sans-serif';
+      }
+      body {
+      height: 100vh;
+      }
+      .container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #ffffff;
+     background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23d6e4ff' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      color: #0B3177;
+      }
+      .status {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #2B7B97;
+      }
+      .error {
+      color: #7A0A20;
+      }
+      .success {
+      color: #0B5F24;
+      }
+      input {
+      margin-top: .5rem;
+      padding: .5rem;
+      border: none;
+      background-color: #2D86D6;
+      color: white;
+      width: 250px;
+      }
+      input[type='submit'] {
+      background-color: #134690;
+      color: white;
+      }
+      input[type='submit']:hover {
+      cursor: pointer;
+      }
+      input:focus {
+      outline: 2px solid #134690;
+      }
+  body
+    div(class="container")
             if !status
                 p(class='status error') You must enter the website URL and click the "Check site status" button.
             else if status === 'is available!'
@@ -84,6 +71,3 @@ html(lang="en")
                     br
                 input#url(type="text", name="url" pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?" required)
                 input(type='submit', value='Check site status')
-            svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 1440 320')
-                path(fill='#091A7A' fill-opacity='1' d='M0,192L120,208C240,224,480,256,720,245.3C960,235,1200,181,1320,154.7L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z')
-                
